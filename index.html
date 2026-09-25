@@ -1,9 +1,186 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Website</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2ndBoot | Refurbished tech for people who need it</title>
+  <meta name="description" content="2ndBoot is a nonprofit that collects, refurbishes, and redistributes computers so students, families, and community groups can get online.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Hello World! My GitHub Page is working.</h1>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top">
+        <span class="logo-mark" aria-hidden="true">2</span>
+        2ndBoot
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="nav" id="site-nav">
+        <a href="#mission">Mission</a>
+        <a href="#programs">Programs</a>
+        <a href="#help">Get involved</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-primary" href="#help">Donate a device</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Community technology nonprofit</p>
+          <h1>Old laptops. Second boot. New opportunity.</h1>
+          <p class="lede">2ndBoot collects unused computers, wipes and repairs them, then places them with students, job seekers, and neighborhood groups who need a reliable way online.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#help">Give a computer</a>
+            <a class="btn btn-ghost" href="#programs">See our programs</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="How a donated laptop is prepared">
+          <div class="device">
+            <small>Refurb queue</small>
+            <div>
+              <strong>Dell Latitude · 2018</strong>
+              <p>Wiped, upgraded to 8GB RAM, loaded with Linux and office tools.</p>
+            </div>
+          </div>
+          <div class="stats">
+            <div class="stat"><strong>3</strong><span>ways to help</span></div>
+            <div class="stat"><strong>1</strong><span>community at a time</span></div>
+            <div class="stat"><strong>Reuse</strong><span>before recycle</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="mission">
+      <div class="wrap split">
+        <div class="section-head">
+          <p class="eyebrow">Why we exist</p>
+          <h2>A working computer should not be a luxury.</h2>
+          <p class="muted">Homework, job applications, telehealth, and small-business bookkeeping all assume a device and a connection. Plenty of usable hardware is sitting in closets while neighbors go without.</p>
+        </div>
+        <ul class="steps">
+          <li>
+            <div>
+              <h3>Collect</h3>
+              <p class="muted">We take laptops, desktops, monitors, and accessories from households, offices, and schools.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>Refurbish</h3>
+              <p class="muted">Volunteers test hardware, replace parts when we can, and securely erase old data.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>Place</h3>
+              <p class="muted">Finished machines go to people referred by libraries, shelters, schools, and partner nonprofits.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="programs">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">What we do</p>
+          <h2>Programs built around reuse, not landfill.</h2>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <h3>Device donation</h3>
+            <p class="muted">Drop off a working or repairable computer. We handle data wipe and keep what can still serve someone else.</p>
+          </article>
+          <article class="card">
+            <h3>Community workshop</h3>
+            <p class="muted">Volunteers learn basic hardware repair while preparing machines for distribution days.</p>
+          </article>
+          <article class="card">
+            <h3>Digital starter kits</h3>
+            <p class="muted">Recipients get a ready-to-use laptop, a simple getting-started guide, and a path to local digital-skills help.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="help">
+      <div class="wrap split">
+        <div class="panel">
+          <p class="eyebrow">Get involved</p>
+          <h2>Give hardware, time, or a gift that keeps a machine in service.</h2>
+          <div class="ways">
+            <div class="way">
+              <h3>Donate a device</h3>
+              <p>Laptops from the last 8–10 years, chargers, and 8GB+ RAM machines help most. Remove the password if you can.</p>
+            </div>
+            <div class="way">
+              <h3>Volunteer</h3>
+              <p>Intake, testing, OS install, and distribution days all need people. No repair background required.</p>
+            </div>
+            <div class="way">
+              <h3>Fund parts</h3>
+              <p>SSDs, RAM, and batteries turn almost-good computers into daily drivers. Ask us for the current parts list.</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p class="eyebrow">Request or offer help</p>
+          <h2>Tell us how you want to connect.</h2>
+          <form class="form" id="contact-form">
+            <label>Name
+              <input name="name" type="text" autocomplete="name" required>
+            </label>
+            <label>Email
+              <input name="email" type="email" autocomplete="email" required>
+            </label>
+            <label>I want to
+              <select name="topic" required>
+                <option value="">Choose one</option>
+                <option>Donate a computer</option>
+                <option>Volunteer</option>
+                <option>Request a device for a client or student</option>
+                <option>Partner as an organization</option>
+                <option>Help fund parts</option>
+              </select>
+            </label>
+            <label>Message
+              <textarea name="message" placeholder="What do you have, or what do you need?"></textarea>
+            </label>
+            <button class="btn btn-primary" type="submit">Send message</button>
+            <p class="form-note" id="form-note" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Contact</p>
+          <h2>A typical 2ndBoot welcome desk.</h2>
+          <p class="muted">Replace these placeholders with your real hours, city, and email when you are ready to publish.</p>
+          <p><strong>Intake:</strong> Saturdays 10 a.m.–1 p.m.<br>
+          <strong>Email:</strong> hello@2ndboot.example<br>
+          <strong>Mailing:</strong> Community Workshop, your city</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <p>© 2026 2ndBoot. A community nonprofit for refurbished technology.</p>
+      <p>Secure wipe · Reuse first · Recycle last</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
