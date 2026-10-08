@@ -18,38 +18,19 @@ if (toggle && nav) {
 }
 
 if (form && note) {
-    form.addEventListener("submit", (event) => {
-        event.preventDefault();
-        
-        const data = new FormData(form);
-        const name = String(data.get("name") || "").trim();
-        const email = String(data.get("email") || "").trim();
-        const topic = String(data.get("topic") || "").trim();
+  form.addEventListener("submit", (event) => {
+    const name = String(new FormData(form).get("name") || "").trim();
+    const email = String(new FormData(form).get("email") || "").trim();
+    const topic = String(new FormData(form).get("topic") || "").trim();
 
-        if (!name || !email || !topic) {
-            note.textContent = "Please fill in your name, email, and how we can help.";
-            return;
-        }
+    if (!name || !email || !topic) {
+      event.preventDefault();
+      note.textContent = "Please fill in your name, email, and how we can help.";
+      return;
+    }
 
-        note.textContent = "Sending your message...";
-
-        // FIXED URL: added /submit at the end
-        fetch("https://web3forms.com", {
-            method: "POST",
-            body: data
-        })
-        .then(response => {
-            if (response.ok) {
-                form.reset();
-                note.textContent = "Thank You! One of our team members will reach out to you shortly.";
-            } else {
-                note.textContent = "Something went wrong. Please try again later.";
-            }
-        })
-        .catch(error => {
-            note.textContent = "Network error. Please check your internet connection.";
-        });
-    });
+    note.textContent = "Sending your message...";
+  });
 }
 
 
