@@ -26,20 +26,14 @@ if (form && note) {
         const email = String(data.get("email") || "").trim();
         const topic = String(data.get("topic") || "").trim();
 
-        // Keep your validation code at the top, just change this bottom part:
-    if (!name || !email || !topic) {
-        note.textContent = "Please fill in your name, email, and how we can help.";
-        return;
+        if (!name || !email || !topic) {
+            note.textContent = "Please fill in your name, email, and how we can help.";
+            return;
         }
 
-// Instead of using fetch(), let the HTML form submit normally:
-        form.submit(); 
-
-
-        // Show a temporary loading message while sending
         note.textContent = "Sending your message...";
 
-        // Send the data quietly to Web3Forms in the background
+        // FIXED URL: added /submit at the end
         fetch("https://web3forms.com", {
             method: "POST",
             body: data
@@ -57,4 +51,5 @@ if (form && note) {
         });
     });
 }
+
 
