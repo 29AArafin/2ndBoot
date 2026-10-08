@@ -26,10 +26,15 @@ if (form && note) {
         const email = String(data.get("email") || "").trim();
         const topic = String(data.get("topic") || "").trim();
 
-        if (!name || !email || !topic) {
-            note.textContent = "Please fill in your name, email, and how we can help.";
-            return;
+        // Keep your validation code at the top, just change this bottom part:
+    if (!name || !email || !topic) {
+        note.textContent = "Please fill in your name, email, and how we can help.";
+        return;
         }
+
+// Instead of using fetch(), let the HTML form submit normally:
+        form.submit(); 
+
 
         // Show a temporary loading message while sending
         note.textContent = "Sending your message...";

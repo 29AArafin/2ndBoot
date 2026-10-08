@@ -156,14 +156,20 @@ a {
 }
 
 .hero {
-  padding: 4.5rem 0 3.5rem;
+  padding: 3rem 0 2rem;
+  background: linear-gradient(180deg, rgba(16, 66, 54, 0.85), rgba(16, 66, 54, 0.85));
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 2.5rem;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2.2rem;
   align-items: center;
+  min-height: 540px;
+}
+
+.hero-copy {
+  padding: 2rem 0;
 }
 
 .eyebrow {
@@ -186,6 +192,7 @@ h3 {
 h1 {
   font-size: clamp(2.3rem, 5vw, 4.1rem);
   margin: 0 0 1rem;
+  color: #f3f3ee;
 }
 
 h2 {
@@ -195,7 +202,7 @@ h2 {
 
 .lede {
   font-size: 1.15rem;
-  color: var(--ink-soft);
+  color: rgba(255, 255, 255, 0.82);
   max-width: 38rem;
 }
 
@@ -206,36 +213,44 @@ h2 {
   margin-top: 1.6rem;
 }
 
+.stat-strip {
+  padding: 0 0 1.5rem;
+  background: transparent;
+}
+
 .stats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.8rem;
-  margin-top: 1rem;
-}
-
-.stats-strip {
-  padding: 0 0 1.5rem;
-}
-
-.stats-strip .stats {
   margin-top: 0;
 }
 
 .stat {
-  background: #f3eee4;
-  border-radius: 14px;
-  padding: 0.85rem;
+  background: #f0ebe3;
+  border: 1px solid rgba(18, 34, 28, 0.12);
+  border-radius: 1rem;
+  min-height: 120px;
+  padding: 0.9rem 0.7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .stat strong {
   display: block;
-  font-size: 1.35rem;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  line-height: 1;
   font-family: "Fraunces", Georgia, serif;
+  color: var(--ink);
 }
 
 .stat span {
   color: var(--ink-soft);
-  font-size: 0.88rem;
+  font-size: 0.82rem;
+  margin-top: 0.35rem;
+  line-height: 1.2;
 }
 
 section {
