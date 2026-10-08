@@ -18,20 +18,38 @@ if (toggle && nav) {
 }
 
 if (form && note) {
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const data = new FormData(form);
-    const name = String(data.get("name") || "").trim();
-    const email = String(data.get("email") || "").trim();
-    const topic = String(data.get("topic") || "").trim();
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        
+        const data = new FormData(form);
+        const name = String(data.get("name") || "").trim();
+        const email = String(data.get("email") || "").trim();
+        const topic = String(data.get("topic") || "").trim();
 
-    if (!name || !email || !topic) {
-      note.textContent = "Please fill in your name, email, and how we can help.";
-      return;
-    }
+        if (!name || !email || !topic) {
+            note.textContent = "Please fill in your name, email, and how we can help.";
+            return;
+        }
 
-    form.reset();
-    note.textContent =
-      "Thanks. This demo form stays on your device. Connect a form service when you are ready to receive messages.";
-  });
+        // Show a temporary loading message while sending
+        note.textContent = "Sending your message...";
+
+        // Send the data quietly to Web3Forms in the background
+        fetch("https://web3forms.com", {
+            method: "POST",
+            body: data
+        })
+        .then(response => {
+            if (response.ok) {
+                form.reset();
+                note.textContent = "Thank You! One of our team members will reach out to you shortly.";
+            } else {
+                note.textContent = "Something went wrong. Please try again later.";
+            }
+        })
+        .catch(error => {
+            note.textContent = "Network error. Please check your internet connection.";
+        });
+    });
 }
+
