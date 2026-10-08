@@ -206,33 +206,19 @@ h2 {
   margin-top: 1.6rem;
 }
 
-.hero-card {
-  background: var(--paper-2);
-  border: 1px solid var(--line);
-  border-radius: 28px;
-  box-shadow: var(--shadow);
-  padding: 1.4rem;
-}
-
-.device {
-  background: linear-gradient(160deg, var(--forest-deep), var(--leaf));
-  color: #fff;
-  border-radius: 18px;
-  min-height: 220px;
-  padding: 1.4rem;
-  display: grid;
-  align-content: space-between;
-}
-
-.device small {
-  opacity: 0.8;
-}
-
 .stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.8rem;
   margin-top: 1rem;
+}
+
+.stats-strip {
+  padding: 0 0 1.5rem;
+}
+
+.stats-strip .stats {
+  margin-top: 0;
 }
 
 .stat {
@@ -412,4 +398,53 @@ textarea {
   .stats {
     grid-template-columns: 1fr;
   }
+}
+/* Columbus cover: preserve the forest, gold, and paper palette. */
+:root {
+  --hero-overlay: color-mix(in srgb, var(--forest-deep) 82%, transparent);
+  --hero-overlay-bottom: color-mix(in srgb, var(--ink) 92%, transparent);
+  --hero-line: color-mix(in srgb, var(--paper-2) 45%, transparent);
+  --hero-text-shadow: 0 2px 12px var(--forest-deep);
+}
+.site-header {
+  background: color-mix(in srgb, var(--forest-deep) 94%, transparent);
+  color: var(--paper-2);
+  border-bottom-color: var(--hero-line);
+}
+.site-header .nav a { color: var(--gold-soft); }
+.site-header .nav a:hover,
+.site-header .nav a:focus-visible { color: var(--paper-2); }
+.site-header .nav .btn-primary { color: var(--paper-2); }
+.menu-toggle { color: inherit; border-color: var(--hero-line); }
+.hero {
+  position: relative;
+  isolation: isolate;
+  color: var(--paper-2);
+  min-height: 38rem;
+  display: grid;
+  align-items: center;
+  padding: 5rem 0 4rem;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -4.4rem 0 0;
+  background-image: linear-gradient(var(--hero-overlay), var(--hero-overlay-bottom)), url("https://id-preview--9c994936-292e-427a-aa61-f8ba42dab8ea.lovable.app/__l5e/assets-v1/ed11a45d-4b6b-47c0-a83d-3e8ab5c28219/columbus.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.hero h1 { text-shadow: var(--hero-text-shadow); }
+.hero .eyebrow { color: var(--gold-soft); }
+.hero .lede { color: var(--paper-2); text-shadow: var(--hero-text-shadow); }
+.hero .btn-ghost { color: var(--paper-2); border-color: var(--hero-line); }
+.hero .btn-ghost:hover,
+.hero .btn-ghost:focus-visible { background: var(--forest-deep); }
+.hero-card { color: var(--ink); }
+.hero .stats { color: var(--ink); }
+@media (max-width: 860px) {
+  .site-header .nav { background: var(--forest-deep); border-color: var(--hero-line); }
+  .hero { min-height: auto; padding: 3.5rem 0 3rem; }
+  .hero::before { background-position: 55% center; }
 }
